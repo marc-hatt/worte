@@ -108,6 +108,10 @@ h5 {
   transition: background .2s ease;
 }
 
+.section {
+  height: 100vh;
+}
+
 .short {
   height: (100vh / 3);
 }
