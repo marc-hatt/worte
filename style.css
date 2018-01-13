@@ -1,15 +1,12 @@
 body {
-  font-family: "Tungsten Rounded A", "Tungsten Rounded B";
+  font-family: "NeueHaasUnicaW1G-Bold";
+  font-weight: normal;
   font-style: normal;
-  font-weight: 600;
   font-size: calc(100% + 3.5vw);
   color: #eaeffa;
 }
 
 p.ausz {
-  font-family: "Operator A", "Operator B";
-  font-style: italic;
-  font-weight: 600;
   color: #ffe066;
   padding: none;
   margin-bottom: 0;
@@ -23,6 +20,9 @@ h1 {
 }
 
 h5 {
+  font-family: "NeueHaasUnicaW1G-Regular";
+	font-weight: normal;
+	font-style: normal;
   margin-top: calc(15% + 0.1vw);;
 }
 
