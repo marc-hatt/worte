@@ -54,6 +54,93 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script>
+    $(document).ready(function() {
+
+    /* Every time the window is scrolled ... */
+    $(window).scroll( function(){
+
+        /* Check the location of each desired element */
+        $('.hideme').each( function(i){
+
+            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window > bottom_of_object ){
+
+                $(this).animate({'opacity':'1'},500);
+
+            }
+
+        });
+
+    });
+
+});
+    </script>
+    <script>
+var fps = 100;
+var autoScrollDelay = 500;
+var speedFactor = 0.0005;
+var minDelta = 0.5;
+var autoScrollSpeed = 1;
+var autoScrollTimer, restartTimer;
+var isScrolling = false;
+var prevPos = 0, currentPos = 0;
+var currentTime, prevTime, timeDiff;
+
+window.addEventListener("scroll", function (e) {
+    // window.pageYOffset is the fallback value for IE
+    currentPos = window.scrollY || window.pageYOffset;
+});
+
+window.addEventListener("wheel", handleManualScroll);
+window.addEventListener("touchmove", handleManualScroll);
+
+function handleManualScroll() {
+    // window.pageYOffset is the fallback value for IE
+    currentPos = window.scrollY || window.pageYOffset;
+    clearInterval(autoScrollTimer);
+    if (restartTimer) {
+        clearTimeout(restartTimer);
+    }
+    restartTimer = setTimeout(() => {
+        prevTime = null;
+        setAutoScroll();
+    }, 500);
+}
+
+function setAutoScroll(newValue) {
+    if (newValue) {
+        autoScrollSpeed = speedFactor * newValue;
+    }
+    if (autoScrollTimer) {
+        clearInterval(autoScrollTimer);
+    }
+    autoScrollTimer = setInterval(function(){
+        currentTime = Date.now();
+        if (prevTime) {
+            if (!isScrolling) {
+                timeDiff = currentTime - prevTime;
+                currentPos += autoScrollSpeed * timeDiff;
+                if (Math.abs(currentPos - prevPos) >= minDelta) {
+                    isScrolling = true;
+                    window.scrollTo(0, currentPos);
+                    isScrolling = false;
+                    prevPos = currentPos;
+                    prevTime = currentTime;
+                }
+            }
+        } else {
+            prevTime = currentTime;
+        }
+    }, 1000 / fps);
+}
+
+setAutoScroll(20);
+
+    </script>
+    <script>
     $(window).scroll(function() {
 
   // selectors
@@ -115,9 +202,7 @@
   <body>
     <div class="jumbotron text-center">
       <div class= "page-header">
-        <h1>05:59</h1>
-
-        <a href="#content"><i class="fa fa-chevron-down"></i></a>
+        <a href="#content"><h1>05:59</h1></a>
       </div>
     </div>
 <div id="content">
@@ -129,95 +214,105 @@
             Zuhause
           </h5>
         </div>
-        <div class="col-10">
-          Haustür</br>
-          Hausschlüssel</br>
-          Türschloss</br>
-          <p class="ausz">Türklinke</br></p>
-          Türschwelle</br>
-          Haustür</br>
-          Türklinke</br>
-          Hausschlüssel</br>
-          Aussicht</br>
-          Glastür</br>
-          <p class="ausz">Türgriff</br></p>
-          Steinplattenboden</br>
-          Lift</br>
-          Treppe</br>
-          Treppenstufen</br>
-          Geländer</br>
-          Ausgangstür</br>
-          Türklinke</br>
+        <div class="col-2 text-right">
+          <h5 class="verticaltext_content">
+            06:25
+          </h5>
+        </div>
+        <div class="col-8">
+          <p class=hideme>Haustür</br></p>
+          <p class=hideme>Hausschlüssel</br></p>
+          <p class=hideme>Türschloss</br></p>
+          <p class=hideme><p class="ausz">Türklinke</br></p></p>
+          <p class=hideme>Türschwelle</br></p>
+          <p class=hideme>Haustür</br></p>
+          <p class=hideme>Türklinke</br></p>
+          <p class=hideme>Hausschlüssel</br></p>
+          <p class=hideme>Aussicht</br></p>
+          <p class=hideme>Glastür</br></p>
+          <p class=hideme><p class="ausz">Türgriff</br></p></p>
+          <p class=hideme>Steinplattenboden</br></p>
+          <p class=hideme>Lift</br></p>
+          <p class=hideme>Treppe</br></p>
+          <p class=hideme>Treppenstufen</br></p>
+          <p class=hideme>Geländer</br></p>
+          <p class=hideme>Ausgangstür</br></p>
+          <p class=hideme>Türklinke</br></p>
         </div>
       </div>
     <div class="birr">
       <div class="panel" data-color="dark-2">
       <div class="row">
         <div class="col-2 text-right">
-          <h5 class="verticaltext_content">
-            Birr
-          </h5>
-        </div>
-        <div class="col-10">
-          Aschenbecher</br>
-          Pflastersteine</br>
-          Hecke</br>
-          Rasen</br>
-          Baustellenabsperrung</br>
-          Einfahrtssperre</br>
-          Strassenlampe</br>
-          Mäuerchen</br>
-          Strassenlaterne</br>
-          Infotafel</br>
-          <p class="ausz">Anschlagsbrett</br></p>
-          Gemeindehaus</br>
-          Recyclingbehälter</br>
-          Texaidkasten</br>
-          Abfallkübel</br>
-          Auto</br>
-          Briefkasten</br>
-          <p class="ausz">Auto</br></p>
-          Fussgängerstreifen</br>
-          Zaun</br>
-          Kopfsteinpflaster</br>
-          Auto</br>
-          Pflaumenbaum</br>
-          Rasen</br>
-          Pflaumenbaum</br>
-          Bauernhaus</br>
-          Kieseinfahrt</br>
-          Plaufmenbaum</br>
-          Apfelbaum</br>
-          Apfelbaum</br>
-          Apfelbaum</br>
-          Mauer</br>
-          <p class="ausz">Strasse</br></p>
-          Randstein</br>
-          Bauernhaus</br>
-          Bushaltestelle</br>
-          Abfahrtplan</br>
-          Abfallkübel</br>
-          Aschenbecher</br>
-          <p class="ausz">Zigarettenpäckchen</br></p>
-          Zigarette</br>
-          <p class="ausz">Feuerzeug</br></p>
-          Rauch</br>
-          Glut</br>
-          Asche</br>
-          Bäckerei</br>
-          Kindergarten</br>
-          Auto</br>
-          Auto</br>
-          Auto</br>
-          Auto</br>
-          Auto</br>
-          Auto</br>
-          <p class="ausz">Aschenbecher</br></p>
-          Zigarettenstummel</br>
-          Glut</br>
-          Asche</br>
-          Bus</br>
-          Bustür</br>
+            <h5 class="verticaltext_content">
+              Birr
+            </h5>
+          </div>
+          <div class="col-2 text-right">
+            <h5 class="verticaltext_content">
+              06:32
+            </h5>
+          </div>
+        <div class="col-8">
+          <p class=hideme>Aschenbecher</br></p>
+          <p class=hideme>Pflastersteine</br></p>
+          <p class=hideme>Hecke</br></p>
+          <p class=hideme>Rasen</br></p>
+          <p class=hideme>Baustellenabsperrung</br></p>
+          <p class=hideme>Einfahrtssperre</br></p>
+          <p class=hideme>Strassenlampe</br></p>
+          <p class=hideme>Mäuerchen</br></p>
+          <p class=hideme>Strassenlaterne</br></p>
+          <p class=hideme>Infotafel</br></p>
+          <p class=hideme><p class="ausz">Anschlagsbrett</br></p></p>
+          <p class=hideme>Gemeindehaus</br></p>
+          <p class=hideme>Recyclingbehälter</br></p>
+          <p class=hideme>Texaidkasten</br></p>
+          <p class=hideme>Abfallkübel</br></p>
+          <p class=hideme>Auto</br></p>
+          <p class=hideme>Briefkasten</br></p>
+          <p class=hideme><p class="ausz">Auto</br></p></p>
+          <p class=hideme>Fussgängerstreifen</br></p>
+          <p class=hideme>Zaun</br></p>
+          <p class=hideme>Kopfsteinpflaster</br></p>
+          <p class=hideme>Auto</br></p>
+          <p class=hideme>Pflaumenbaum</br></p>
+          <p class=hideme>Rasen</br></p>
+          <p class=hideme>Pflaumenbaum</br></p>
+          <p class=hideme>Bauernhaus</br></p>
+          <p class=hideme>Kieseinfahrt</br></p>
+          <p class=hideme>Plaufmenbaum</br></p>
+          <p class=hideme>Apfelbaum</br></p>
+          <p class=hideme>Apfelbaum</br></p>
+          <p class=hideme>Apfelbaum</br></p>
+          <p class=hideme>Mauer</br></p>
+          <p class=hideme><p class="ausz">Strasse</br></p></p>
+          <p class=hideme>Randstein</br></p>
+          <p class=hideme>Bauernhaus</br></p>
+          <p class=hideme>Bushaltestelle</br></p>
+          <p class=hideme>Abfahrtplan</br></p>
+          <p class=hideme>Abfallkübel</br></p>
+          <p class=hideme>Aschenbecher</br></p>
+          <p class=hideme><p class="ausz">Zigarettenpäckchen</br></p></p></p>
+          <p class=hideme>Zigarette</br></p>
+          <p class=hideme><p class="ausz">Feuerzeug</br></p></p>
+          <p class=hideme>Rauch</br></p>
+          <p class=hideme>Glut</br></p>
+          <p class=hideme>Asche</br></p>
+          <p class=hideme>Bäckerei</br></p>
+          <p class=hideme>Kindergarten</br></p>
+          <p class=hideme>Auto</br></p>
+          <p class=hideme>Auto</br></p>
+          <p class=hideme>Auto</br></p>
+          <p class=hideme>Auto</br></p>
+          <p class=hideme>Auto</br></p>
+          <p class=hideme>Auto</br></p>
+          <p class=hideme><p class="ausz">Aschenbecher</br></p></p>
+          <p class=hideme>Zigarettenstummel</br></p>
+          <p class=hideme>Glut</br></p>
+          <p class=hideme>Asche</br></p>
+          <p class=hideme>Bus</br></p>
+          <p class=hideme>Bustür</br></p>
         </div>
       </div>
       </div>
@@ -228,23 +323,26 @@
             Birr – Bus
           </h5>
         </div>
-        <div class="col-3">
+        <div class="col-2 text-right">
+          <h5 class="verticaltext_content">
+            06:35
+          </h5>
         </div>
-        <div class="col-7">
-          <p class="ausz">Greifstangen</br></p>
-          Glaswand</br>
-          Sitzgelegenheit</br>
-          Fenster</br>
-          Bauernhaus</br>
-          Ponyhof</br>
-          Strassenlaterne</br>
-          Haus</br>
-          Haus</br>
-          Strassenlaterne</br>
+        <div class="col-2">
+        </div>
+        <div class="col-6">
+          <p class=hideme><p class="ausz">Greifstangen</br></p></p>
+          <p class=hideme>Glaswand</br></p>
+          <p class=hideme>Sitzgelegenheit</br></p>
+          <p class=hideme>Fenster</br></p>
+          <p class=hideme>Bauernhaus</br></p>
+          <p class=hideme>Ponyhof</br></p>
+          <p class=hideme>Strassenlaterne</br></p>
+          <p class=hideme>Haus</br></p>
+          <p class=hideme>Haus</br></p>
+          <p class=hideme>Strassenlaterne</br></p>
         </div>
       </div>
-    </div>
-  </div>
       <div class="distanz-1">
         <div class="row">
           <div class="col-2 text-right">
@@ -252,26 +350,31 @@
               Lupfig – Bus
             </h5>
           </div>
-          <div class="col-3">
+          <div class="col-2 text-right">
+            <h5 class="verticaltext_content">
+              06:37
+            </h5>
           </div>
-          <div class="col-7">
-            Strassenlaterne</br>
-            Haus</br>
-            Haus</br>
-            Haus</br>
-            Haus</br>
-            Strassenlaterne</br>
-            Haus</br>
-            Haus</br>
-            Haus</br>
-            Strassenlaterne</br>
-            Bushaltestelle</br>
-            <p class="ausz">Menschen</br></p>
-            Anzeigetafel</br>
-            Werbetafel</br>
-            <p class="ausz">Handy</br></p>
-            Bushaltestelle</br>
-            <p class="ausz">Handy</br></p>
+          <div class="col-2">
+          </div>
+          <div class="col-6">
+            <p class=hideme>Strassenlaterne</br></p>
+            <p class=hideme>Haus</br></p>
+            <p class=hideme>Haus</br></p>
+            <p class=hideme>Haus</br></p>
+            <p class=hideme>Haus</br></p>
+            <p class=hideme>Strassenlaterne</br></p>
+            <p class=hideme>Haus</br></p>
+            <p class=hideme>Haus</br></p>
+            <p class=hideme>Haus</br></p>
+            <p class=hideme>Strassenlaterne</br></p>
+            <p class=hideme>Bushaltestelle</br></p>
+            <p class=hideme><p class="ausz">Menschen</br></p></p>
+            <p class=hideme>Anzeigetafel</br></p>
+            <p class=hideme>Werbetafel</br></p>
+            <p class=hideme><p class="ausz">Handy</br></p></p>
+            <p class=hideme>Bushaltestelle</br></p>
+            <p class=hideme><p class="ausz">Handy</br></p></p>
           </div>
         </div>
       </div>
@@ -284,18 +387,23 @@
               Hausen – Bus
             </h5>
           </div>
-          <div class="col-3">
+          <div class="col-2 text-right">
+            <h5 class="verticaltext_content">
+              06:44
+            </h5>
           </div>
-          <div class="col-7">
-            Bushaltestelle</br>
-            <p class="ausz">Handy</br></p>
-            Bushaltestelle</br>
-            <p class="ausz">Handy</br></p>
-            Bushaltestelle</br>
-            <p class="ausz">Handy</br></p>
-            Bushaltestelle</br>
-            <p class="ausz">Handy</br></p>
-            Bushaltestelle</br>
+          <div class="col-2">
+          </div>
+          <div class="col-6">
+            <p class=hideme>Bushaltestelle</br></p>
+            <p class=hideme><p class="ausz">Handy</br></p></p>
+            <p class=hideme>Bushaltestelle</br></p>
+            <p class=hideme><p class="ausz">Handy</br></p></p>
+            <p class=hideme>Bushaltestelle</br></p>
+            <p class=hideme><p class="ausz">Handy</br></p></p>
+            <p class=hideme>Bushaltestelle</br></p>
+            <p class=hideme><p class="ausz">Handy</br></p></p>
+            <p class=hideme>Bushaltestelle</br></p>
           </div>
         </div>
       </div>

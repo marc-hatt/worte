@@ -4,8 +4,8 @@ body {
   font-style: normal;
   font-size: calc(100% + 3.5vw);
   color:  #eaeffa;
-  background-color: #f4f4f4;
-  transition: background-color 2s ease;
+  background-color: #000000;
+  transition: background-color 1s ease;
 }
 
 p.ausz {
@@ -15,10 +15,10 @@ p.ausz {
 }
 
 h1 {
-  font-size: calc(100% + 5vw);
+  font-size: calc(100% + 18vw);
   font-weight: normal;
   font-style: normal;
-  color: #ffffff;
+  color: #eaeffa;
   letter-spacing: 1px;
   spacing: 5px;
 }
@@ -30,8 +30,21 @@ h5 {
   margin-top: calc(15% + 0.1vw);;
 }
 
+a{
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
 .fa {
   color: #ffffff;
+}
+
+.hideme
+{
+    opacity:0;
 }
 
 /* .fadeout {
