@@ -3,13 +3,14 @@ body {
   font-style: normal;
   font-weight: 600;
   font-size: calc(100% + 3.5vw);
+  color: #eaeffa;
 }
 
 p.ausz {
   font-family: "Operator A", "Operator B";
   font-style: italic;
   font-weight: 600;
-  color: #ff3333;
+  color: #ffe066;
   padding: none;
   margin-bottom: 0;
 }
