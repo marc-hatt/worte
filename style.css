@@ -59,7 +59,6 @@ h5 {
 }
 
 */
-section {position:relative}
 
 .page-header {
   position: absolute;
@@ -107,9 +106,6 @@ section {position:relative}
 
 .wrapper {
   transition: background .2s ease;
-}
-.section {
-  display: flex;
 }
 
 .short {
