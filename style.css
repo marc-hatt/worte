@@ -112,7 +112,7 @@ a:hover {
     position: sticky;
     transform: rotate(180deg);
     writing-mode: vertical-lr;
-    top: 5px;
+    top: 15px;
     font-size:calc(40% + 0.1vw);
     color: #ffe066;
 }
