@@ -1,7 +1,8 @@
 body {
-  font-family: "Operator A", "Operator B", Arial;
-  font-size: calc(100% + 3.5vw);
+  font-family: "Operator A", "Operator B";
+  font-style: normal;
   font-weight: 600;
+  font-size: calc(100% + 3.5vw);
 }
 
 p.ausz {
