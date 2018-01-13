@@ -23,6 +23,15 @@ h1 {
   spacing: 5px;
 }
 
+#time {
+  font-size: calc(100% + 18vw);
+  font-weight: normal;
+  font-style: normal;
+  color: #eaeffa;
+  letter-spacing: 1px;
+  spacing: 5px;
+}
+
 h5 {
   font-family: "NeueHaasUnicaW1G-Regular";
 	font-weight: normal;
