@@ -20,6 +20,13 @@
     <!-- Skriptly und so -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
+    var $target = $('.wrapper');
+      inView('.section').on('enter', function(el){
+      var color = $(el).attr('data-background-color');
+      $target.css('background-color', color );
+    });
+    </script>
+    <script>
     $(document).ready(function(){
       // Add smooth scrolling to all links
       $("a").on('click', function(event) {
@@ -66,24 +73,26 @@
           </h5>
         </div>
         <div class="col-10">
-          Haustür</br>
-          Hausschlüssel</br>
-          Türschloss</br>
-          <p class="ausz">Türklinke</br></p>
-          Türschwelle</br>
-          Haustür</br>
-          Türklinke</br>
-          Hausschlüssel</br>
-          Aussicht</br>
-          Glastür</br>
-          <p class="ausz">Türgriff</br></p>
-          Steinplattenboden</br>
-          Lift</br>
-          Treppe</br>
-          Treppenstufen</br>
-          Geländer</br>
-          Ausgangstür</br>
-          Türklinke</br>
+          <div class="section" data-background-color="#050a15">
+            Haustür</br>
+            Hausschlüssel</br>
+            Türschloss</br>
+            <p class="ausz">Türklinke</br></p>
+            Türschwelle</br>
+            Haustür</br>
+            Türklinke</br>
+            Hausschlüssel</br>
+            Aussicht</br>
+            Glastür</br>
+            <p class="ausz">Türgriff</br></p>
+            Steinplattenboden</br>
+            Lift</br>
+            Treppe</br>
+            Treppenstufen</br>
+            Geländer</br>
+            Ausgangstür</br>
+            Türklinke</br>
+          </div>
         </div>
       </div>
     <div class="birr">

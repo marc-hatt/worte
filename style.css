@@ -76,14 +76,13 @@ section {position:relative}
 }
 
 .jumbotron.text-center {
-  background-color: #ff3333;
   height: 100%;
   margin-bottom: 0;
   height: 100vh;
   border-radius: 0px;
   border-style: solid;
   border-width: 20px;
-  border-color: #ffffff;
+  background-color: #000000;
 }
 
 .verticaltext_content {
@@ -103,6 +102,17 @@ section {position:relative}
 .distanz-2 {
   padding-top: 16rem;
   width: 100%
+}
+
+.wrapper {
+  transition: background .2s ease;
+}
+.section {
+  display: flex;
+}
+
+.short {
+  height: (100vh / 3);
 }
 
 
