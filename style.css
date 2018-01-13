@@ -104,19 +104,29 @@ h5 {
   width: 100%
 }
 
-.wrapper {
-  transition: background .2s ease;
+.panel {
+  min-height: 100vh;
 }
 
-.section {
-  height: 100vh;
+dark-1 {
+  background-color: #050a15;
 }
 
-.short {
-  height: (100vh / 3);
+dark-2 {
+  background-color: #0a1429;
 }
 
+dark-3 {
+  background-color: #0f1e3e;
+}
 
+dark-4 {
+  background-color: #132753;
+}
+
+dark-5 {
+  background-color:
+}
 
 @media only screen and (max-width: 600px) {
     body {
