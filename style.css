@@ -1,11 +1,14 @@
 body {
-  font-family: "Operator A", "Operator B";
+  font-family: "Tungsten Rounded A", "Tungsten Rounded B";
   font-style: normal;
   font-weight: 600;
   font-size: calc(100% + 3.5vw);
 }
 
 p.ausz {
+  font-family: "Operator A", "Operator B";
+  font-style: italic;
+  font-weight: 600;
   color: #ff3333;
   padding: none;
   margin-bottom: 0;
