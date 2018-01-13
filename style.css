@@ -3,7 +3,8 @@ body {
   font-weight: normal;
   font-style: normal;
   font-size: calc(100% + 3.5vw);
-  color: #eaeffa;
+  color: "$clouds";
+  background: "$dark";
 }
 
 p.ausz {
