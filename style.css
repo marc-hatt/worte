@@ -14,7 +14,8 @@ p.ausz {
 
 h1 {
   font-size: calc(100% + 5vw);
-  font-weight: 600;
+  font-weight: normal;
+  font-style: normal;
   color: #ffffff;
   letter-spacing: 1px;
   spacing: 5px;
