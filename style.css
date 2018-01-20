@@ -15,6 +15,12 @@ p.ausz {
   margin-bottom: 0;
 }
 
+p.ausz-dark {
+  color: #cd3259;
+  padding: none;
+  margin-bottom: 0;
+}
+
 h1 {
   font-size: calc(100% + 18vw);
   font-weight: normal;
@@ -52,8 +58,12 @@ a:hover {
   color: #ffffff;
 }
 
-.hideme
-{
+.hideme {
+    opacity:0;
+}
+
+.hideme-dark {
+    color:#0f1e3e;
     opacity:0;
 }
 
@@ -119,6 +129,16 @@ a:hover {
     width: auto;
 }
 
+.verticaltext_content-dark {
+    position: sticky;
+    transform: rotate(180deg);
+    writing-mode: vertical-lr;
+    top: 15px;
+    font-size:calc(40% + 0.1vw);
+    color: #cd3259;
+    width: auto;
+}
+
 .distanz-1 {
   padding-top: 7rem;
   width: 100%
@@ -169,6 +189,11 @@ a:hover {
   width: 100%
 }
 
+.distanz-14 {
+  padding-top: 12rem;
+  width: 100%
+}
+
 .panel {
   min-height: 100vh;
 }
@@ -214,27 +239,27 @@ a:hover {
 }
 
 .color-dark-11 {
-  background-color: #3063cf;
+  background-color: #6e91dd;
 }
 
 .color-dark-12 {
-  background-color: #3063cf;
+  background-color: #83a1e2;
 }
 
 .color-dark-13 {
-  background-color: #3063cf;
+  background-color: #98b1e7;
 }
 
 .color-dark-14 {
-  background-color: #3063cf;
+  background-color: #acc0ec;
 }
 
 .color-dark-15 {
-  background-color: #3063cf;
+  background-color: #c1d0f0;
 }
 
 .color-dark-16 {
-  background-color: #3063cf;
+  background-color: #d6e0f5;
 }
 
 @media only screen and (max-width: 600px) {
@@ -264,30 +289,32 @@ a:hover {
 	font-weight: normal;
 	font-style: normal;
   margin-top: calc(15% + 0.1vw);;
-  color: #eaeffa;
-  opacity: 0.5;
+  color: #83a1e2;
+  mix-blend-mode: screen;
+  opacity: 0.7;
 }
 
 
-/* Blinker */
+/* About */
 
-.blink_me {
-  animation: blinker 1s linear infinite;
+h2.about {
+  font-family: "NeueHaasUnicaW1G-Bold";
+  font-weight: normal;
+  font-style: normal;
+  font-size: calc(0.1% + 3vw);
+  color:  #eaeffa;
+  margin: 0 0 auto;
 }
 
-@keyframes blinker {
-  50% { opacity: 0; }
+p.projekt {
+  font-family: "NeueHaasUnicaW1G-Regular";
+	font-weight: normal;
+	font-style: normal;
+  font-size:calc(40% + 0.1vw);
+  padding-top: calc(5% + 0.1vw);
+  line-height: 1.4;
 }
 
-/* .verticaltext_content {
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-    left: calc(3% + 0.1vw);
-    top: calc(8% + 0.1vw);
-    font-size:calc(40% + 0.1vw);
-    color: #ff3333;
-    position: sticky;
-} */
+.text-about {
+  padding-top: calc(20% + 0.1vw);
+}
