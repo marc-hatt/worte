@@ -5,6 +5,7 @@ body {
   font-size: calc(100% + 3.5vw);
   color:  #eaeffa;
   background-color: #000000;
+  line-height: 1.2;
   transition: background-color 1s ease;
 }
 
@@ -181,6 +182,37 @@ a:hover {
     }
 }
 
+
+/* NAVIGATION */
+.nav {
+  float: right;
+  position: sticky;
+  height: 97vmin;
+  transform: rotate(180deg);
+  writing-mode: vertical-lr;
+  top: 15px;
+  font-size:calc(40% + 0.1vw);
+}
+
+.nav-item {
+  font-family: "NeueHaasUnicaW1G-Regular";
+	font-weight: normal;
+	font-style: normal;
+  margin-top: calc(15% + 0.1vw);;
+  color: #eaeffa;
+  opacity: 0.5;
+}
+
+
+/* Blinker */
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
+}
 
 /* .verticaltext_content {
     -webkit-transform: rotate(-90deg);

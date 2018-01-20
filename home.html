@@ -79,78 +79,13 @@
 });
     </script>
     <script>
-    var texts = ["05:58", "05:59", "06:00", "06:00", "06:00", "06:00", "06:00", "06:00", "06:00", "06:00", "06:00", "06:00", "06:00", "06:00", "06:00", "06:00", "06:00", "06:00", "06:00"];
+    var texts = ["05:56", "05:57", "05:58", "05:59", "06:00", "06:00", "06:00", "06:00", "06:00", "06:00", "06:00", "06:00", "06:00", "06:00", "06:00", "06:00", "06:00", "06:00", "06:00"];
     var count = 0;
     function changeText() {
         $("#time").text(texts[count]);
-        count < 18 ? count++ : count = 0;
+        count < 18 ? count++ : count = 1;
     }
     setInterval(changeText, 2000);
-    </script>
-    <script>
-var fps = 100;
-var autoScrollDelay = 500;
-var speedFactor = 0.0005;
-var minDelta = 0.5;
-var autoScrollSpeed = 1;
-var autoScrollTimer, restartTimer;
-var isScrolling = false;
-var prevPos = 0, currentPos = 0;
-var currentTime, prevTime, timeDiff;
-var delayInMilliseconds = 7000; //1 second
-
-setTimeout(function() {
-
-window.addEventListener("scroll", function (e) {
-    // window.pageYOffset is the fallback value for IE
-    currentPos = window.scrollY || window.pageYOffset;
-});
-
-window.addEventListener("wheel", handleManualScroll);
-window.addEventListener("touchmove", handleManualScroll);
-
-function handleManualScroll() {
-    // window.pageYOffset is the fallback value for IE
-    currentPos = window.scrollY || window.pageYOffset;
-    clearInterval(autoScrollTimer);
-    if (restartTimer) {
-        clearTimeout(restartTimer);
-    }
-    restartTimer = setTimeout(() => {
-        prevTime = null;
-        setAutoScroll();
-    }, 50);
-}
-
-function setAutoScroll(newValue) {
-    if (newValue) {
-        autoScrollSpeed = speedFactor * newValue;
-    }
-    if (autoScrollTimer) {
-        clearInterval(autoScrollTimer);
-    }
-    autoScrollTimer = setInterval(function(){
-        currentTime = Date.now();
-        if (prevTime) {
-            if (!isScrolling) {
-                timeDiff = currentTime - prevTime;
-                currentPos += autoScrollSpeed * timeDiff;
-                if (Math.abs(currentPos - prevPos) >= minDelta) {
-                    isScrolling = true;
-                    window.scrollTo(0, currentPos);
-                    isScrolling = false;
-                    prevPos = currentPos;
-                    prevTime = currentTime;
-                }
-            }
-        } else {
-            prevTime = currentTime;
-        }
-    }, 1000 / fps);
-}
-
-setAutoScroll(20);
-}, delayInMilliseconds);
     </script>
     <script>
     $(window).scroll(function() {
@@ -184,6 +119,37 @@ setAutoScroll(20);
 }).scroll();
     </script>
     <script>
+    $(window).load(function(){
+
+  var is_scrollDown  = true,
+      scrollSpeed    = 1,
+      scrollDelay    = 40;
+
+
+  function autoScroll(){
+
+    if ( is_scrollDown )
+    	window.scrollBy(0,scrollSpeed);
+    else
+      window.scrollBy(0,-scrollSpeed);
+
+  }
+
+  $(window).on('mousewheel', function(event) {
+    if(event.deltaY > 0)
+    	is_scrollDown  = false;
+    else
+      is_scrollDown  = true;
+	});
+
+
+  var scrollInterval = setInterval(autoScroll, scrollDelay);
+
+
+
+});
+</script>
+    <script>
     $(document).ready(function(){
       // Add smooth scrolling to all links
       $("a").on('click', function(event) {
@@ -212,6 +178,11 @@ setAutoScroll(20);
 
   </head>
   <body>
+    <div class="nav">
+      <div class="nav-items">
+        <a href="./about.html"><p class="nav-item">About</p></a>
+      </div>
+    </div>
     <div class="jumbotron text-center">
       <div class= "page-header">
         <div id="time"></div>
@@ -219,7 +190,7 @@ setAutoScroll(20);
     </div>
 <div id="content">
   <div class="container">
-    <div class="panel" data-color="dark-2">
+    <div class="panel" data-color="dark-1">
       <div class="row">
         <div class="col-2 text-right">
           <h5 class="verticaltext_content">
@@ -253,7 +224,7 @@ setAutoScroll(20);
         </div>
       </div>
     <div class="birr">
-      <div class="panel" data-color="dark-4">
+      <div class="panel" data-color="dark-2">
       <div class="row">
         <div class="col-2 text-right">
             <h5 class="verticaltext_content">
@@ -328,7 +299,7 @@ setAutoScroll(20);
         </div>
       </div>
       </div>
-    <div class="panel" data-color="dark-6">
+    <div class="panel" data-color="dark-3">
       <div class="row justify-content-center">
         <div class="col-2 text-right">
           <h5 class="verticaltext_content">
@@ -391,7 +362,7 @@ setAutoScroll(20);
         </div>
       </div>
     </div>
-    <div class="panel" data-color="dark-8">
+    <div class="panel" data-color="dark-4">
       <div class="distanz-2">
         <div class="row">
           <div class="col-2 text-right">
