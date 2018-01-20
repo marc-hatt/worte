@@ -116,6 +116,7 @@ a:hover {
     top: 15px;
     font-size:calc(40% + 0.1vw);
     color: #ffe066;
+    width: auto;
 }
 
 .distanz-1 {
@@ -124,7 +125,47 @@ a:hover {
 }
 
 .distanz-2 {
-  padding-top: 16rem;
+  padding-top: 27rem;
+  width: 100%
+}
+
+.distanz-3 {
+  padding-top: 18rem;
+  width: 100%
+}
+
+.distanz-4 {
+  padding-top: 12rem;
+  width: 100%
+}
+
+.distanz-7 {
+  padding-top: 58rem;
+  width: 100%
+}
+
+.distanz-7 {
+  padding-top: 12rem;
+  width: 100%
+}
+
+.distanz-8 {
+  padding-top: 18rem;
+  width: 100%
+}
+
+.distanz-9 {
+  padding-top: 20rem;
+  width: 100%
+}
+
+.distanz-10 {
+  padding-top: 24rem;
+  width: 100%
+}
+
+.distanz-11 {
+  padding-top: 8rem;
   width: 100%
 }
 
@@ -169,6 +210,30 @@ a:hover {
 }
 
 .color-dark-10 {
+  background-color: #3063cf;
+}
+
+.color-dark-11 {
+  background-color: #3063cf;
+}
+
+.color-dark-12 {
+  background-color: #3063cf;
+}
+
+.color-dark-13 {
+  background-color: #3063cf;
+}
+
+.color-dark-14 {
+  background-color: #3063cf;
+}
+
+.color-dark-15 {
+  background-color: #3063cf;
+}
+
+.color-dark-16 {
   background-color: #3063cf;
 }
 
