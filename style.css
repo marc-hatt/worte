@@ -304,6 +304,7 @@ h2.about {
   font-size: calc(0.1% + 3vw);
   color:  #eaeffa;
   margin: 0 0 auto;
+  padding-top: calc(8% + 0.1vw);
 }
 
 p.projekt {
