@@ -16,7 +16,7 @@ p.ausz {
 }
 
 p.ausz-dark {
-  color: #e6b800;
+  color: #ffe066;
   padding: none;
   margin-bottom: 0;
 }
@@ -135,7 +135,7 @@ a:hover {
     writing-mode: vertical-lr;
     top: 15px;
     font-size:calc(40% + 0.1vw);
-    color: #e6b800;
+    color: #ffe066;
     width: auto;
 }
 
