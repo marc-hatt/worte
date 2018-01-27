@@ -10,13 +10,13 @@ body {
 }
 
 p.ausz {
-  color: #ffe066;
+  color: #ff2f4a;
   padding: none;
   margin-bottom: 0;
 }
 
 p.ausz-dark {
-  color: #ffe066;
+  color: #ff2f4a;
   padding: none;
   margin-bottom: 0;
 }
@@ -125,7 +125,7 @@ a:hover {
     writing-mode: vertical-lr;
     top: 15px;
     font-size:calc(40% + 0.1vw);
-    color: #ffe066;
+    color: #ff2f4a;
     width: auto;
 }
 
@@ -135,7 +135,7 @@ a:hover {
     writing-mode: vertical-lr;
     top: 15px;
     font-size:calc(40% + 0.1vw);
-    color: #ffe066;
+    color: #ff2f4a;
     width: auto;
 }
 
@@ -289,7 +289,7 @@ a:hover {
 	font-weight: normal;
 	font-style: normal;
   margin-top: calc(15% + 0.1vw);;
-  color: #83a1e2;
+  color: #ff2f4a;
   mix-blend-mode: screen;
   opacity: 0.7;
 }
